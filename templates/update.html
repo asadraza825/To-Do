@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1> Task Template</h1>
+        <table border=1>
+            <tr>
+                <th>Task</th>
+                <th>Added</th>
+            </tr>
+            <tr>
+                <td>{{ data.content }}</td>
+                <td>{{ data.date_created }}</td>
+                   
+            </tr>
+           
+        </table>
+        
+        <div class="form">
+            <form action="/update" method="post">
+                <input type="text" name="content" id="content" value='{{ data.content }}' />
+                <input type="hidden" name="id" id="id" value='{{ data.id }}' />
+                <input type="submit" value="Update Task">
+            </form>  
+        </div>
+        
+{% endblock %}
